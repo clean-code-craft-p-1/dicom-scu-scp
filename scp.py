@@ -5,8 +5,12 @@ from pydicom.uid import ExplicitVRLittleEndian
 debug_logger()
 
 def handle_store(event):
-     print('Handle EVT_C_STORE events here')
-     return 0x0000
+    ds = event.dataset
+    ds.file_meta = event.file_meta
+    print(f"Received C-STORE request from: {event.assoc.requestor.address}")
+    print(f"SOP Class UID: {ds.SOPClassUID}")
+    print(f"Transfer Syntax UID: {event.context.transfer_syntax}")
+    return 0x0000
 
 handlers = [(evt.EVT_C_STORE, handle_store)]
 

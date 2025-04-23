@@ -20,7 +20,7 @@ python scp.py
 
 ## Running the SCU
 
-Send a C-ECHO request using the SCU (Service Class User):
+Send a C-ECHO followed by a C-STORE as SCU (Service Class User):
 
 ```bash
 python scu.py

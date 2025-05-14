@@ -26,6 +26,12 @@ Send a C-ECHO followed by a C-STORE as SCU (Service Class User):
 python scu.py
 ```
 
+## Send a DICOM file to the scp
+
+```bash
+python -m pynetdicom storescu 127.0.0.1 11112 "samples\ctslice" -v -cx
+```
+
 ## DICOM as a chat analogy
 
 DICOM Term | Chat Analogy
@@ -50,3 +56,13 @@ Worklist (MWL) | Photography schedule (morning housewarming, evening reception)
 Study Instance UID | Unique ID of the photo album of a tour
 Series Instance UID | Unique ID of a collection in the album (e.g. at a location)
 SOP Instance UID | A unique ID for an individual photo inside a collection
+
+## References
+
+DICOM viewer: https://www.microdicom.com/
+
+DICOM in python: https://pydicom.github.io
+
+DICOM standard: https://www.dicomstandard.org/
+
+Easy browsing of DICOM standard: https://dicom.innolitics.com

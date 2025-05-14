@@ -20,7 +20,9 @@ def start_scp():
     ae.add_supported_context(Verification)
     ae.add_supported_context(SecondaryCaptureImageStorage, ExplicitVRLittleEndian)
 
-    ae.start_server(('127.0.0.1', 11112), block=True, evt_handlers=handlers)
+    port = 11112
+    print("SCP listening on port:", port)
+    ae.start_server(('127.0.0.1', port), block=True, evt_handlers=handlers)
 
 if __name__ == "__main__":
     start_scp()

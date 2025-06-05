@@ -65,4 +65,8 @@ DICOM in python: https://pydicom.github.io
 
 DICOM standard: https://www.dicomstandard.org/
 
+DICOM-web cheatsheet: https://www.dicomstandard.org/using/dicomweb/dicomweb-cheatsheet
+
 Easy browsing of DICOM standard: https://dicom.innolitics.com
+
+OHIF DICOM-web viewer: https://ohif.org/

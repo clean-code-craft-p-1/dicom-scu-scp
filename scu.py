@@ -1,7 +1,7 @@
 from pydicom.dataset import Dataset
 from pynetdicom import AE, debug_logger
-from pynetdicom.sop_class import Verification, SecondaryCaptureImageStorage
-from pydicom.uid import ExplicitVRLittleEndian
+from pynetdicom.sop_class import Verification, SecondaryCaptureImageStorage, CTImageStorage
+from pydicom.uid import ExplicitVRLittleEndian, JPEGLossless
 
 debug_logger()
 
@@ -9,6 +9,7 @@ def send_c_echo():
     ae = AE()
     ae.add_requested_context(Verification)
     ae.add_requested_context(SecondaryCaptureImageStorage, ExplicitVRLittleEndian)
+    ae.add_requested_context(CTImageStorage, JPEGLossless)
 
     assoc = ae.associate('127.0.0.1', 11112)
     if assoc.is_established:

@@ -1,6 +1,6 @@
 from pynetdicom import AE, debug_logger, evt
-from pynetdicom.sop_class import Verification, SecondaryCaptureImageStorage
-from pydicom.uid import ExplicitVRLittleEndian
+from pynetdicom.sop_class import Verification, SecondaryCaptureImageStorage, CTImageStorage
+from pydicom.uid import ExplicitVRLittleEndian, JPEGLossless
 
 debug_logger()
 
@@ -19,6 +19,7 @@ def start_scp():
     ae = AE(ae_title='tryout_scp')
     ae.add_supported_context(Verification)
     ae.add_supported_context(SecondaryCaptureImageStorage, ExplicitVRLittleEndian)
+    ae.add_supported_context(CTImageStorage, JPEGLossless)
 
     port = 11112
     print("SCP listening on port:", port)
